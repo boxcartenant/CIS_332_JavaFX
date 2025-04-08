@@ -13,6 +13,6 @@
 
    <Label text="Welcome to Scene 2"/>
    <!-- Button to switch back to Scene 1 -->
-   <Button fx:id="switchBackButton" text="Back to Scene 1" onAction="#switchToScene1"/>
+   <Button fx:id="switchBackButton" text="Switch to Scene 2" onAction="#switchToScene2"/>
 
 </AnchorPane>
