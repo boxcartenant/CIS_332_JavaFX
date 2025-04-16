@@ -38,6 +38,8 @@ public class Controller {
 
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
 
+        SingletonDemo mySingleton = SingletonDemo.getInstance();
+        mySingleton.showMessage();
         stage.setTitle("Scene 1 - Welcome");
         stage.setScene(scene1);
         stage.show();
