@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="my_new_package.Controller"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="my_new_package.Controller">
 
-    <Button fx:id="switchButton" text="Back to Scene 1" onAction="#switchToScene1"/>
+    <Button fx:id="switchButton" layoutX="250.0" layoutY="188.0" onAction="#switchToScene1" text="Back to Scene 1" textFill="#4d00ff" />
+   <ColorPicker id="Scene1ColorPicker" editable="true" layoutX="238.0" layoutY="137.0">
+      <value>
+         <Color red="0.1215277761220932" green="0.0416666679084301" blue="1.0" />
+      </value>
+   </ColorPicker>
 
 </AnchorPane>
