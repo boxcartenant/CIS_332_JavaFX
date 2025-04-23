@@ -32,7 +32,8 @@ public class Controller {
 
     @FXML
     public void switchToScene1(ActionEvent event) throws IOException {
-        mySingleton.openScene(event, "SceneOne.fxml", "Scene 1 - Welcome");
+        Stage scene1stage = mySingleton.openScene(event, "SceneOne.fxml", "Scene 1 - Welcome");
+
     }
 
 }

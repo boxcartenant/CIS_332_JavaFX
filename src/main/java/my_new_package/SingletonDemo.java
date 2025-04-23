@@ -28,7 +28,7 @@ public class SingletonDemo {
     //example method to demo functionality
     public void showMessage() { System.out.println("Hello from the Singleton!");}
 
-    public void openScene(ActionEvent event, String sceneName, String title) throws IOException {
+    public Stage openScene(ActionEvent event, String sceneName, String title) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource(sceneName));
         Scene scene2 = new Scene(fxmlLoader.load(), 600,400);
@@ -38,5 +38,6 @@ public class SingletonDemo {
         stage.setTitle(title);
         stage.setScene(scene2);
         stage.show();
+        return stage;
     }
 }

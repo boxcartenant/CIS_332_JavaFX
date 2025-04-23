@@ -26,7 +26,8 @@ public class SceneThree {
 
     @FXML
     public void switchToScene1(ActionEvent event) throws IOException {
-        mySingleton.openScene(event, "SceneOne.fxml", "Scene 1 - Welcome!");
+        mySingleton.openScene(event, "SceneOne.fxml", "Scene 1 - Welcome");
+
     }
 
     @FXML
@@ -39,7 +40,14 @@ public class SceneThree {
 
     @FXML
     public void addToPieChart(ActionEvent event) throws IOException {
-        System.out.println("Not yet implemented");
+        String input = PieChartTextField.getText();
+
+        if (!input.isEmpty()) {
+            double weight = input.length();
+            PieChart.Data mydata = new PieChart.Data(input, weight);
+            WordPieChart.getData().add(mydata);
+            PieChartTextField.clear();
+        }
     }
 
 
