@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="my_new_package.Controller">
+<?import javafx.scene.control.Label?>
+<AnchorPane fx:id="pain" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="my_new_package.Controller">
 
     <Button fx:id="switchButton" layoutX="250.0" layoutY="188.0" onAction="#switchToScene1" text="Back to Scene 1" textFill="#4d00ff" />
    <ColorPicker id="Scene1ColorPicker" editable="true" layoutX="238.0" layoutY="137.0">
@@ -13,5 +14,6 @@
          <Color red="0.1215277761220932" green="0.0416666679084301" blue="1.0" />
       </value>
    </ColorPicker>
-
+   <Label fx:id="CurrentUser" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="429.0" layoutY="21.0" nodeOrientation="RIGHT_TO_LEFT" text="Current User:" AnchorPane.rightAnchor="25.0" />
+   <Label fx:id="MacCoolOut" contentDisplay="RIGHT" layoutX="307.0" layoutY="44.0" text="We don't know if Mac is cool or not." AnchorPane.rightAnchor="25.0" />
 </AnchorPane>

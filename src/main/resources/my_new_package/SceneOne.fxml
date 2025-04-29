@@ -4,11 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="my_new_package.Controller">
+<AnchorPane fx:id="pain" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="my_new_package.Controller">
 
    <Label layoutX="246.0" layoutY="63.0" text="Welcome to Scene 1" />
    <!-- Button to switch back to Scene 1 -->
    <Button fx:id="switchBackButton" layoutX="245.0" layoutY="100.0" onAction="#switchToScene2" text="Switch to Scene 2" />
-   <Button fx:id="switchBackButton1" layoutX="246.0" layoutY="158.0" onAction="#switchToScene3" text="Switch to Scene 3" />
-
+   <Button fx:id="switchBackButton1" layoutX="245.0" layoutY="158.0" onAction="#switchToScene3" text="Switch to Scene 3" />
+   <Button fx:id="switchSceneButton" layoutX="245.0" layoutY="216.0" onAction="#switchToSettings" text="Settings" />
+   <Label fx:id="CurrentUser" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="429.0" layoutY="21.0" nodeOrientation="RIGHT_TO_LEFT" text="Current User:" AnchorPane.rightAnchor="25.0" />
+   <Label fx:id="MacCoolOut" contentDisplay="RIGHT" layoutX="307.0" layoutY="44.0" text="We don't know if Mac is cool or not." AnchorPane.rightAnchor="25.0" />
 </AnchorPane>

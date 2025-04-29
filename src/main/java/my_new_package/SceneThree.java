@@ -3,19 +3,35 @@ package my_new_package;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.Node;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class SceneThree {
+public class SceneThree implements Initializable {
 
 
-    SingletonDemo mySingleton = SingletonDemo.getInstance();
+    SingletonDemo myData = SingletonDemo.getInstance();
+    @FXML
+    public Label CurrentUser;
+    @FXML
+    public Label MacCoolOut;
+    @FXML
+    public AnchorPane pain;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //initialize common components
+        myData.set_common(pain, MacCoolOut, CurrentUser);
+    }
 
     // Utility method to sanitize CSS string
     private String encodeCss(String css) {
@@ -33,7 +49,7 @@ public class SceneThree {
 
     @FXML
     public void switchToScene1(ActionEvent event) throws IOException {
-        mySingleton.switchScenes(event, "SceneOne.fxml","Scene 1 - Welcome!");
+        myData.switchScenes(event, "SceneOne.fxml","Scene 1 - Welcome!");
     }
 
     @FXML
