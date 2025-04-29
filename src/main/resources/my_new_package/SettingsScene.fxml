@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="my_new_package.SettingsScene">
+   <children>
+      <Label fx:id="UserNameLabel" layoutX="384.0" layoutY="14.0" text="User Name" />
+      <Label fx:id="MacCoolLabel" layoutX="384.0" layoutY="38.0" text="We don't know if Mac is cool." />
+      <TextField layoutX="54.0" layoutY="55.0" onAction="#changeUsername" promptText="Enter Your Username" />
+      <RadioButton fx:id="RadioYes" layoutX="71.0" layoutY="113.0" mnemonicParsing="false" text="Yes">
+         <toggleGroup>
+            <ToggleGroup fx:id="MacCoolGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="RadioUnknown" layoutX="71.0" layoutY="134.0" mnemonicParsing="false" text="Don't Know" toggleGroup="$MacCoolGroup" />
+      <RadioButton fx:id="RadioNo" layoutX="71.0" layoutY="155.0" mnemonicParsing="false" text="No" toggleGroup="$MacCoolGroup" />
+      <Label layoutX="80.0" layoutY="92.0" text="Is Macintosh Cool?" />
+      <ColorPicker fx:id="BGColorPicker" layoutX="66.0" layoutY="203.0" onAction="#changeBGColor" />
+      <ColorPicker fx:id="TextColorPicker" layoutX="66.0" layoutY="246.0" onAction="#changeTextColor">
+         <value>
+            <Color />
+         </value>
+      </ColorPicker>
+      <CheckBox fx:id="HonorificsCheckbox" layoutX="66.0" layoutY="30.0" mnemonicParsing="false" onAction="#toggleHonorifics" text="Honorifics" />
+      <Label layoutX="203.0" layoutY="206.0" text="Background Color" />
+      <Label layoutX="206.0" layoutY="250.0" text="Text Color" />
+      <Button fx:id="scene1Button" layoutX="417.0" layoutY="109.0" mnemonicParsing="false" onAction="#navigateScene1" prefHeight="25.0" prefWidth="143.0" text="Back to Scene 1" />
+   </children>
+</AnchorPane>
