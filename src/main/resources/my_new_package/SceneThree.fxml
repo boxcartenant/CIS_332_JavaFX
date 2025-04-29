@@ -5,8 +5,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.control.Label?>
 <AnchorPane id="rootPane" fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="my_new_package.SceneThree">
    <children>
+      <Label fx:id="UserNameLabel" layoutX="384.0" layoutY="14.0" text="User Name" />
+      <Label fx:id="MacCoolLabel" layoutX="384.0" layoutY="38.0" text="We don't know if Mac is cool." />
       <TextField id="CSSTextField" fx:id="CSSTextField" layoutX="383.0" layoutY="94.0" styleClass="MyStyles" />
       <Button id="ApplyCSSButton" layoutX="386.0" layoutY="131.0" mnemonicParsing="false" onAction="#changeMyCSS" prefHeight="25.0" prefWidth="149.0" text="Apply CSS" />
       <Button id="BackToScene1Button" fx:id="switchToScene1" layoutX="393.0" layoutY="29.0" onAction="#switchToScene1" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Back to Scene 1" />
