@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -39,21 +40,50 @@ public class SettingsScene implements Initializable {
 
     @FXML
     public void changeUsername(ActionEvent actionEvent) {
+        myData.userName = username.getText();
+        refreshUI();
     }
     @FXML
-    public void handleRadioSelection(ActionEvent actionEvent) {
+    public void handleRadioSelection(ActionEvent event) {
+        //get the source radiovutton
+        RadioButton selected = (RadioButton) event.getSource();
+        if (selected.isSelected()) {
+            String selectedText = selected.getText();
+            switch (selectedText) {
+                case "Don't Know":
+                    myData.isMacCool = "We don't know if Mac is cool.";
+                    myData.macCoolInt = 0;
+                    break;
+                case "No":
+                    myData.isMacCool = "Mac is very uncool.";
+                    myData.macCoolInt = -1;
+                    break;
+                case "Yes":
+                    myData.isMacCool = "Mac is super cool.";
+                    myData.macCoolInt = 1;
+                    break;
+            }
+        }
+        refreshUI();
     }
     @FXML
     public void changeBGColor(ActionEvent actionEvent) {
+        myData.bgColor = BGColorPicker.getValue();
+        refreshUI();
     }
     @FXML
     public void changeTextColor(ActionEvent actionEvent) {
+        myData.textColor = TextColorPicker.getValue();
+        refreshUI();
     }
     @FXML
     public void toggleHonorifics(ActionEvent actionEvent) {
+        myData.honorifics = HonorificsCheckbox.isSelected();
+        refreshUI();
     }
     @FXML
-    public void navigateScene1(ActionEvent actionEvent) {
+    public void navigateScene1(ActionEvent event) throws IOException {
+        myData.openScene(event, "SceneOne.fxml", "Scene 1 - Welcome");
     }
 
     @Override
