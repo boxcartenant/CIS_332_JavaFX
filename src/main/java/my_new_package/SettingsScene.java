@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,6 +26,14 @@ public class SettingsScene implements Initializable {
     public CheckBox HonorificsCheckbox;
     @FXML
     public Button scene1Button;
+    @FXML
+    public TextField username;
+    @FXML
+    public AnchorPane pain;
+    @FXML
+    public Label UserNameLabel;
+    @FXML
+    public Label MacCoolLabel;
 
     SingletonDemo myData = SingletonDemo.getInstance();
 
@@ -54,5 +63,18 @@ public class SettingsScene implements Initializable {
 
     private void refreshUI() {
         //initialize selection from
+        if (myData.macCoolInt == 0) RadioUnknown.setSelected(true);
+        else if (myData.macCoolInt == -1) RadioNo.setSelected(true);
+        else if (myData.macCoolInt == 1) RadioYes.setSelected(true);
+        else RadioUnknown.setSelected(true);
+
+        //initialize background color pickers and username entry
+        if (myData.textColor != null) TextColorPicker.setValue(myData.textColor);
+        if (myData.bgColor != null) BGColorPicker.setValue(myData.bgColor);
+        if (myData.userName != null) username.setText(myData.userName);
+
+        HonorificsCheckbox.setSelected(myData.honorifics);
+
+        myData.set_common(pain, MacCoolLabel, UserNameLabel);
     }
 }
