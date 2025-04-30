@@ -49,4 +49,8 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         myData.set_common(pain, MacCoolLabel, UserNameLabel);
     }
+
+    public void switchToSettings(ActionEvent event) throws IOException {
+        Stage scene1stage = myData.openScene(event, "SettingsScene.fxml", "Some Settings!");
+    }
 }
